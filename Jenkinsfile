@@ -77,28 +77,11 @@ pipeline {
                 script {
                     def params = [
                         string(name: 'version',value: "$packageVersion"
-                        string(name: 'environment',value: 'dev')
                     ]
                     build job: "catalogue-deploy", wait: true, parameters: [
                 }
            }
         }
-    }
-        // stage('check params'){
-        //     steps{
-        //         sh """
-        //             echo "Hello ${params.PERSON}"
-
-        //             echo "Biography: ${params.BIOGRAPHY}"
-
-        //             echo "Toggle: ${params.TOGGLE}"
-
-        //             echo "Choice: ${params.CHOICE}"
-
-        //             echo "Password: ${params.PASSWORD}"
-        //         """
-        //     }
-        // }
     }
     //post build
     post {
