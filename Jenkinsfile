@@ -27,8 +27,7 @@ pipeline {
         stage('Get the version') { 
             steps {
                 script {
-                    // this is groovy script block-script
-                    def packageJson = readJson file: 'package.Json'   
+                    def packageJson = readJSON file: 'package.json'   
                     // read Json jenkins pipeline, for this install"Pipeline Utility Steps 2.16.1" in jenkins(manage jenkins)  
                     packageVersion = packageJson.version
                     echo "application version: $packageVersion" 
