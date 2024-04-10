@@ -41,7 +41,6 @@ pipeline {
                 sh """
                     npm install
                 """
-            
             }
         }
         stage('Build') { 
@@ -96,7 +95,6 @@ pipeline {
         //         """
         //     }
         // }
-    }
     //post build
     post {
         always {
