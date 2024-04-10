@@ -71,7 +71,7 @@ pipeline {
                 )
             }
         }
-    }
+    
         stage('Deploy') { 
             steps {
                 sh """
@@ -108,5 +108,5 @@ pipeline {
         success{
             echo 'I will say Hello when pipeline is success'
         }
-    
+    }
 }
