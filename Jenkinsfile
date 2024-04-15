@@ -64,15 +64,15 @@ pipeline {
         stage('Deploy') { 
             steps {
                 script {
-                    // sh """
-                    //     echo "HereI wrote shell script"
-                    //     #sleep 10
-                    // """
-                    def params = [
-                        string(name: 'version',value: "$packageVersion"),
-                        string(name: 'environment',value: "dev")
-                    ]
-                    build job: "catalogue-deploy", wait: true, parameters: params
+                    sh """
+                        echo "HereI wrote shell script"
+                        #sleep 10
+                    """
+                    // def params = [
+                    //     string(name: 'version',value: "$packageVersion"),
+                    //     string(name: 'environment',value: "dev")
+                    // ]
+                    // build job: "catalogue-deploy", wait: true, parameters: params
                 }
            }
         }
