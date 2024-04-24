@@ -6,7 +6,7 @@ pipeline {
     }
     environment { 
         packageVersion = ''
-        nexusURL = '172.31.29.245'
+        nexusURL = '172.31.29.245:8081'
     }
     options {
         ansiColor('xterm')
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 sh """
                     ls -la
-                    zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
+                    zip -q -r "catalogue.zip" ./* -x ".git" -x "*.zip"
                     ls -ltr
                 """
             }
