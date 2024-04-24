@@ -62,12 +62,12 @@ pipeline {
                     repository: 'catalogue',
                     credentialsId: 'nexus-auth',
                     artifacts: [
-                        [artifactId: catalogue ,
+                        [artifactId: 'catalogue',
                         classifier: '',
-                        file: 'catalogue.zip' ,
+                        file: 'catalogue.zip',
                         type: 'zip']
                     ]
-                )
+                )    
             }
         }
         stage('Deploy') { 
