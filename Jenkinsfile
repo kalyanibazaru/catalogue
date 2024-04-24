@@ -72,27 +72,11 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh """
-                    echo  "Here I wrote shell script"
-                    #sleep 10
-                """
+                build job: "catalogue-deploy", wait: true, parameters:
+                [string(name: 'version', value: "${packageVersion}"),
+                string(name: 'environment', value: "dev"]
             }
         }
-        // stage('check params'){
-        //     steps{
-        //         sh """
-        //             echo "Hello ${params.PERSON}"
-
-        //             echo "Biography: ${params.BIOGRAPHY}"
-
-        //             echo "Toggle: ${params.TOGGLE}"
-
-        //             echo "Choice: ${params.CHOICE}"
-
-        //             echo "Password: ${params.PASSWORD}"
-        //         """
-        //     }
-        // }
     }
     //post build
     post {
